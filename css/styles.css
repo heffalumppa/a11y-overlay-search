@@ -1,0 +1,212 @@
+body.a11y-overlay-search__dialog-visible {
+    overflow: hidden;
+}
+
+.a11y-overlay-search__dialog {
+    display: none;
+    visibility: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.a11y-overlay-search__dialog--show {
+    display: flex;
+    visibility: visible;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.a11y-overlay-search__container {
+    position: relative;
+    max-width: 650px;
+    width: 100%;
+    margin: 0 2rem;
+}
+
+.a11y-overlay-search_results {
+    position: absolute;
+    top: 64px;
+    background-color: #fff;
+    width: 100%;
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+.a11y-overlay-search_results li {
+    position: relative;
+    transition: all 0.33s;
+    border-bottom: 1px dotted #c3c3c3;
+}
+
+.a11y-overlay-search_results li:first-of-type {
+    border-top: 1px solid #cdcdcd;
+}
+
+.a11y-overlay-search_results li:last-of-type {
+    position: relative;
+    transition: all 0.33s;
+    border-bottom: 0;
+}
+
+.a11y-overlay-search_results li.no-results:hover {
+    position: relative;
+    border-left: 0;
+    background-color: #fff;
+}
+
+.a11y-overlay-search_results li.no-results {
+    padding: 10px;
+    padding-left: 18px;
+}
+
+.a11y-overlay-search_results li a:hover {
+    border-left: 6px solid #606060;
+    background-color: #f3f3f3;
+}
+
+.a11y-overlay-search_results li a:focus {
+    border-left: 6px solid #606060;
+    background-color: #f3f3f3 !important;
+    color: #000 !important;
+    outline: 0;
+}
+
+.a11y-overlay-search_results li a:focus-visible {
+    outline: 2px solid #ffb800;
+    outline-offset: -5px;
+}
+
+.a11y-overlay-search_results li a {
+    transition: all 0.33s;
+    padding: 10px;
+    padding-left: 12px;
+    border-left: 6px solid #fff;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.a11y-overlay-search_results li .post-type-badge {
+    font-size: 10px;
+    font-weight: 600;
+    background-color: #444;
+    display: inline-block;
+    color: #fff;
+    padding: 4px;
+}
+
+.a11y-overlay-search_results li .title {
+    display: block;
+}
+
+.a11y-overlay-search_results li p {
+    margin: 0;
+}
+
+.a11y-overlay-search__form {
+    display: flex;
+    align-items: center;
+}
+
+input[type="search"].a11y-overlay-search__input {
+    width: 100%;
+    max-width: calc(100% - 55px);
+    margin: 0;
+    height: 65px;
+    border: 0;
+    outline: 0;
+    border-radius: 0;
+}
+
+input[type="search"].a11y-overlay-search__input:focus-within {
+    outline: 0;
+}
+
+.a11y-overlay-search__close {
+    background-color: #282828;
+    border: 0;
+    position: absolute;
+    right: 0;
+    top: -70px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+}
+
+.a11y-overlay-search__close .close-search-svg {
+    stroke: #fff;
+}
+
+.a11y-overlay-search__close:hover {
+    cursor: pointer;
+    background-color: #282828;
+}
+
+.a11y-overlay-search__close:focus {
+    outline: 0;
+}
+
+.a11y-overlay-search__close:focus-visible,
+.a11y-overlay-search__submit:focus-visible {
+    outline: 2px solid #ffb800;
+}
+
+button[type="submit"].a11y-overlay-search__submit svg.magnifying-glass {
+    stroke: #fff;
+}
+
+button[type="submit"].a11y-overlay-search__submit {
+    position: relative;
+    z-index: 2;
+    background-color: #282828;
+    border: 0;
+    height: 65px;
+    width: 55px;
+    display: grid;
+    place-items: center;
+    transition: all 0.33s;
+}
+
+button[type="submit"].a11y-overlay-search__submit:hover {
+    cursor: pointer;
+}
+
+.a11y-overlay-search__submit:focus {
+    outline: 0;
+    background-color: #068f78;
+}
+
+.a11y-overlay-search__submit:focus-visible {
+    outline: 2px solid #ffb800;
+}
+
+.a11y-overlay-search__input::-webkit-search-cancel-button {
+    background-image: url("../images/close.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+}
+
+.a11y-overlay-search__input::-webkit-search-cancel-button:hover {
+    cursor: pointer;
+}
