@@ -6,9 +6,9 @@ class Plugin {
     private $version;
 
     public function __construct() {
-        $this->plugin_name = 'a11y-overlay-search'; //
+        $this->plugin_name = 'a11y-overlay-search';
         $this->version = '1.0';
-        load_plugin_textdomain( 'overlay-search', false, dirname (plugin_basename( __FILE__ ) ) . '/languages/' );
+        load_plugin_textdomain( 'overlay-search', false, dirname ( plugin_basename( __FILE__ ) ) . '/languages/' );
     }
 
     public static function activate_plugin() {
@@ -80,7 +80,7 @@ class Plugin {
             esc_url( $home_url ), // Form action.
             esc_html__( 'Search from site', 'overlay-search' ), // Label & placeholder text.
             get_search_query(), // Input value.
-            esc_html__( 'Search', 'overlay-search' ), // Submit value.
+            esc_html__( 'Search', 'overlay-search' ),
             '<svg class="magnifying-glass" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>',
             $results ? $results : '' // Append $results if it exists
         );
@@ -220,7 +220,7 @@ class Plugin {
      * @return string Locale.
      */
     public function set_json_locale($locale) {
-        $current_language = isset( $_GET['lang'] ) ? sanitize_text_field( $_GET['lang' ]) : '';
+        $current_language = isset( $_GET['lang'] ) ? sanitize_text_field( $_GET['lang' ] ) : '';
         return $current_language;
     }
 }
